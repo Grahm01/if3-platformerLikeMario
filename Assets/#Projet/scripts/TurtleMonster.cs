@@ -24,7 +24,7 @@ public class TurtleMonster : MovingMonster
         if (hit.collider == null)
         {
             speed.x *= -1;
-        }
+        } 
 
         base.Update();
 
