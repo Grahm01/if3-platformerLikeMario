@@ -18,7 +18,7 @@ public class MovingMonster : Monster
     }
 
     // Update is called once per frame
-    void Update()
+    virtual protected void Update()
     {
         Vector2 start;
         Vector2 direction;
