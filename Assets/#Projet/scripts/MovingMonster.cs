@@ -42,7 +42,7 @@ public class MovingMonster : Monster
         
 
         //deplacement
-        Vector2 deplacement = speed * Time.deltaTime;
+        Vector2 deplacement = speed  * Time.deltaTime;
         transform.position += (Vector3)deplacement;
 
         if(hit.collider != null)
