@@ -39,7 +39,7 @@ public class MovingMonster : Monster
             {
                 spriteRenderer.flipX = true;
             }
-            spriteRenderer.flipX = true;
+            
             start = (Vector2)transform.position + Vector2.left * 0.51f;
             direction = Vector2.left;
 
@@ -53,10 +53,10 @@ public class MovingMonster : Monster
 
             else
             {
-                spriteRenderer.flipX = true;
+                spriteRenderer.flipX = false;
             }
 
-            spriteRenderer.flipX = false;
+
             start = (Vector2)transform.position + Vector2.right * 0.51f;
             direction = Vector2.right;
         }
@@ -70,7 +70,7 @@ public class MovingMonster : Monster
         Vector2 deplacement = speed  * Time.deltaTime;
         transform.position += (Vector3)deplacement;
 
-        if(hit.collider != null)
+        if(hit.collider != null && !hit.transform.CompareTag("Player"))
         {
             speed.x *= -1;
         }

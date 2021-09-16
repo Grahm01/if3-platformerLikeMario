@@ -11,13 +11,13 @@ public class Monster : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D collision)
     {
 
-        //if (collision.CompareTag("Player"))
-        //{
+        if (collision.CompareTag("Player"))
+        {
 
-        //    Destroy(GameObject.FindWithTag("Player"));
-        //    Debug.Log("You're dead");
-
-        //}
+            //Destroy(GameObject.FindWithTag("Player"));
+            //Debug.Log("You're dead");
+            LevelsManager.LoseLife();
+        }
 
     }
     // Start is called before the first frame update
