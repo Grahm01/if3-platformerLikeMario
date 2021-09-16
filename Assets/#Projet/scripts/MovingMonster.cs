@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class MovingMonster : Monster
 {
+    [Tooltip("Monster speed")]
     public Vector2 speed = Vector2.zero;
 
     private SpriteRenderer spriteRenderer;
     public bool flipX;
 
+    [Tooltip("if an obstacle is at distence equal or less, the sprite flips")]
     public float hitRange = 0.1f;
+
+    private Animator animator;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         
     }
 
@@ -25,12 +30,32 @@ public class MovingMonster : Monster
 
         if (speed.x < 0)
         {
+            if (animator != null)
+            {
+                animator.SetBool("right", false);
+            }
+
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
             spriteRenderer.flipX = true;
             start = (Vector2)transform.position + Vector2.left * 0.51f;
             direction = Vector2.left;
 
         }
-        else { 
+        else {
+
+            if (animator != null)
+            {
+                animator.SetBool("right", true);
+            }
+
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+
             spriteRenderer.flipX = false;
             start = (Vector2)transform.position + Vector2.right * 0.51f;
             direction = Vector2.right;
