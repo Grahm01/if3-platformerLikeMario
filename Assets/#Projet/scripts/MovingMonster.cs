@@ -32,7 +32,7 @@ public class MovingMonster : Monster
         {
             if (animator != null)
             {
-                animator.SetBool("right", false);
+                animator.SetBool("Right", false);
             }
 
             else
@@ -48,7 +48,7 @@ public class MovingMonster : Monster
 
             if (animator != null)
             {
-                animator.SetBool("right", true);
+                animator.SetBool("Right", true);
             }
 
             else
